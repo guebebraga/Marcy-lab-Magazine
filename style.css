@@ -1,0 +1,154 @@
+*{
+margin: 0;
+padding:0;
+box-sizing: border-box;
+}
+body
+{
+display: grid;
+grid-template-columns: 1fr 2fr;
+grid-template-rows: 1fr 4fr 0.8fr;
+grid-template-areas: 'header header'
+                     'aside section'
+                     'footer footer';
+height:100vh;
+}
+.hero
+{
+display: grid;
+grid-area: header;
+background-color: blue; 
+border-radius: 10px;
+color: white;
+justify-content: center;
+align-content: center;
+text-align: center;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+animation-name: ensancharHeader;
+animation-duration: 0.5s;
+animation-timing-function:ease;
+animation-fill-mode: forwards; 
+transition-property:all;
+transition-duration: 500ms;
+transition-delay: 0.1s;
+transition-timing-function: ease-out;
+}
+.aside
+{
+display: grid;
+grid-area: aside;
+background-color: darkcyan;
+border-radius: 10px;
+justify-content:flex-start;
+align-content: flex-start;
+text-align: left;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+padding-top: 18px;
+padding-left: 40px;
+animation-name: alargarAside;
+animation-duration:1s;
+animation-timing-function:ease-in-out;
+animation-fill-mode: forwards;
+}
+.section
+{    
+display: grid;
+grid-area: section;
+justify-content:center;
+align-content:flex-start;
+font-size: 14px;
+padding-left: 40px;
+padding-top: 20px;
+padding-right: 20px;
+background-image: url("https://smoda.elpais.com/wp-content/uploads/2017/06/infanciaafrica-591x447.jpg");
+background-size: 350px 270px;
+background-repeat: no-repeat;
+background-position:40px 210px;
+}
+
+.footer
+{
+display: grid;
+grid-area: footer;
+grid-template-columns: repeat(6, 1fr);
+justify-content: center;
+align-content: center;
+text-align: center;
+background-color: darkkhaki;
+border-radius: 10px;
+}
+@keyframes ensancharHeader
+{
+0%
+{
+width: 0;
+}
+70%
+{
+width: 100%;
+}
+85%
+{
+width: 95%;    
+}
+100%
+{
+width: 100%;    
+}
+    
+}
+
+@keyframes alargarAside
+{
+0%
+{
+height: 0%;
+}
+70%
+{
+height: 100%;    
+}
+85%
+{
+height: 95%;    
+}
+100%
+{
+height: 100%;    
+}
+}
+
+@media(max-width:900px)
+{
+body
+{
+display: grid;
+grid-template-columns: 2fr;
+grid-template-rows: 1fr 4fr 0.8fr;
+grid-template-areas: 'header'
+                     'section'
+                     'footer ';
+}
+.aside
+{
+display: none;
+}             
+} 
+@media(max-width:600px)
+{
+body
+{
+display: grid;
+grid-template-columns: 2fr;
+grid-template-rows: 1fr 4fr 0.8fr;
+grid-template-areas: 'header'
+                     'section'
+                     'footer ';
+ 
+}
+.section
+{
+background-image: none;    
+}       
+}
+
